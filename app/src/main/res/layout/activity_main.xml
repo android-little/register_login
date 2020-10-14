@@ -69,13 +69,15 @@
                 android:layout_marginTop="15dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
-                <TextView
+                <Button
                     android:id="@+id/zhuce"
                     android:layout_marginTop="430dp"
                     android:layout_alignParentRight="true"
                     android:layout_marginRight="20dp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:background="#FBFBFB"
+                    android:textColor="#535252"
                     android:text="新用户注册"/>
 
                 <!--layout_weight="1" layout_width="0dp"实现均分效果-->
