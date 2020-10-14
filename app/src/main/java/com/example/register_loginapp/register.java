@@ -3,6 +3,7 @@ package com.example.register_loginapp;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.view.Window;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
@@ -16,6 +17,7 @@ import org.litepal.LitePal;
 import java.util.List;
 
 public class register extends AppCompatActivity {
+
     String idinput,f_pwdinput,s_pwdinput;
     private EditText number;//账号
     private EditText f_pass;//第一次密码
@@ -23,7 +25,11 @@ public class register extends AppCompatActivity {
     private Button right_zhuce;//立即注册
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
+        supportRequestWindowFeature(Window.FEATURE_NO_TITLE);
+        setContentView(R.layout.activity_main);
+
         setContentView(R.layout.register);
         number=(EditText)findViewById(R.id.number);
         f_pass=(EditText)findViewById(R.id.f_pass);

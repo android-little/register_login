@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.view.Window;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
@@ -30,6 +31,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        supportRequestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.activity_main);
         denglu=(Button)findViewById(R.id.denglu);
         password=(EditText) findViewById(R.id.password);
@@ -52,18 +54,7 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         });
-<<<<<<< HEAD
-        zhuce.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent();
-                intent.setClass(MainActivity.this, register.class);
 
-                startActivity(intent);
-
-            }
-        });
-=======
         ((Button) findViewById(R.id.zhuc))
                 .setOnClickListener(new View.OnClickListener() {
 
@@ -75,7 +66,7 @@ public class MainActivity extends AppCompatActivity {
                     }
                 });
 
->>>>>>> cs2
+
 
 
     }
