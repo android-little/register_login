@@ -29,10 +29,9 @@ public class register extends AppCompatActivity {
         f_pass=(EditText)findViewById(R.id.f_pass);
         s_pass=(EditText)findViewById(R.id.s_pass);
         right_zhuce=(Button) findViewById(R.id.right_zhuce);
-        idinput=number.getText().toString().trim();
         right_zhuce.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
-
+                    idinput=number.getText().toString().trim();
                      f_pwdinput=f_pass.getText().toString().trim();
                     s_pwdinput=s_pass.getText().toString().trim();
                     boolean exist=LitePal.isExist(Data.class,"name = ?",idinput);
@@ -42,7 +41,7 @@ public class register extends AppCompatActivity {
                         Data newdata=new Data();
                         newdata.setName(idinput);
                         newdata.setMima(f_pwdinput);
-                        if(f_pwdinput==s_pwdinput) {
+                        if(f_pwdinput.equals(s_pwdinput)) {
                             boolean flag = newdata.save();
                             Log.d("MainActivity", "flag=" + flag);
                             if (flag) {

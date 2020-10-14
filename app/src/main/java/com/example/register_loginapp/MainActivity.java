@@ -35,7 +35,8 @@ public class MainActivity extends AppCompatActivity {
         password=(EditText) findViewById(R.id.password);
         user_name=(EditText)findViewById(R.id.user_name);
         rembpassword=(CheckBox)findViewById(R.id.rembpassword);
-        zhuce=(Button)findViewById(R.id.zhuce);
+       // zhuce=findViewById(R.id.zhuc);
+        //zhuce.setOnClickListener(new OnClick());
 
         denglu.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -44,33 +45,25 @@ public class MainActivity extends AppCompatActivity {
                 String pwdinput = password.getText().toString().trim();
                 List<Data> datas = LitePal.where("name = ? and mima = ?", nameinput, pwdinput).find(Data.class);
                 if (datas.size() > 0) {
-                    for (Data data : datas) {
-                        Log.d("MainActivity", "ID=" + data.getName());
-                        Log.d("MainActivity", "mima=" + data.getMima());
-                        if (data.getName().equals(nameinput) && data.getMima().equals(pwdinput))
-                            flag = 1;
-                    }
-                }
-                if (flag == 1) {
                     Toast.makeText(MainActivity.this, "登录成功", Toast.LENGTH_SHORT).show();
+
                 } else {
                     Toast.makeText(MainActivity.this, "登录失败，用户名或密码错误，请重新输入", Toast.LENGTH_SHORT).show();
                 }
             }
         });
+        ((Button) findViewById(R.id.zhuc))
+                .setOnClickListener(new View.OnClickListener() {
 
-        class OnClick implements View.OnClickListener {
-
-            @Override
-            public void onClick(View view) {
-                Intent intent;
-                switch (view.getId()) {
-                    case R.id.zhuce:
-                        intent = new Intent(MainActivity.this, register.class);
+                    @Override
+                    public void onClick(View v) {
+                        Intent intent = new Intent(MainActivity.this,
+                                register.class);
                         startActivity(intent);
-                        break;
-                }
-            }
-        }
+                    }
+                });
+
+
+
     }
 }
