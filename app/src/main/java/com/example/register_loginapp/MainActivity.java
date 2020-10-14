@@ -58,19 +58,17 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         });
-
-        class OnClick implements View.OnClickListener {
-
+        zhuce.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent;
-                switch (view.getId()) {
-                    case R.id.zhuce:
-                        intent = new Intent(MainActivity.this, register.class);
-                        startActivity(intent);
-                        break;
-                }
+                Intent intent = new Intent();
+                intent.setClass(MainActivity.this, register.class);
+
+                startActivity(intent);
+
             }
-        }
+        });
+
+
     }
 }
