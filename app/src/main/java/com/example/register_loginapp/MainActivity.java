@@ -7,6 +7,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -34,7 +35,7 @@ public class MainActivity extends AppCompatActivity {
         password=(EditText) findViewById(R.id.password);
         user_name=(EditText)findViewById(R.id.user_name);
         rembpassword=(CheckBox)findViewById(R.id.rembpassword);
-        zhuce = findViewById(R.id.zhuce);
+        zhuce=(Button)findViewById(R.id.zhuce);
 
         denglu.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -46,7 +47,7 @@ public class MainActivity extends AppCompatActivity {
                     for (Data data : datas) {
                         Log.d("MainActivity", "ID=" + data.getName());
                         Log.d("MainActivity", "mima=" + data.getMima());
-                        if (data.getName().equals(nameidinput) && data.getMima().equals(pwdinput))
+                        if (data.getName().equals(nameinput) && data.getMima().equals(pwdinput))
                             flag = 1;
                     }
                 }
