@@ -36,7 +36,6 @@ public class MainActivity extends AppCompatActivity {
         denglu=(Button)findViewById(R.id.denglu);
         password=(EditText) findViewById(R.id.password);
         user_name=(EditText)findViewById(R.id.user_name);
-        rembpassword=(CheckBox)findViewById(R.id.rembpassword);
        // zhuce=findViewById(R.id.zhuc);
         //zhuce.setOnClickListener(new OnClick());
 
